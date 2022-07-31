@@ -1,0 +1,9 @@
+{
+  "name": "Sakuya",
+  "version": "1.0",
+  "author": "Mayuna",
+  "mainClass": "dev.mayuna.sakuya.SakuyaModule",
+  "exceptionHandlingPackages": [
+    "sakuya"
+  ]
+}

@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+    id "com.github.johnrengelman.shadow" version "7.1.2"
+}
+
+group 'dev.mayuna'
+version '1.0'
+
+repositories {
+    flatDir { dirs 'libs' }
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly name: 'moduler-discord-bot'
+
+    // Kryo(Net)
+    implementation group: 'com.esotericsoftware', name: 'kryo', version: '5.0.3'
+    implementation group: 'com.esotericsoftware', name: 'kryonet', version: '2.22.0-RC1'
+
+    // SLF4J
+    compileOnly 'org.apache.logging.log4j:log4j-api:2.17.2'
+
+    // Lombok
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+}
+
+shadowJar {
+    archiveName = 'sakuya-bot-module.jar'
+}
